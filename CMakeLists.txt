@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(CPP_Januari LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(CPP_Januari main.cpp
+    device.h
+    light.h
+    device.cpp
+    light.cpp)
+
+include(GNUInstallDirs)
+install(TARGETS CPP_Januari
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
