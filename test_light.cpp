@@ -13,6 +13,10 @@ private slots:
         QVERIFY(l.status() == "Light is ON");
     }
 
+    void testTurnOff() {
+        Light l("TestLight");
+        l.turnOff();
+        QVERIFY(l.status() == "Light is OFF");
     }
 };
 
