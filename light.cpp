@@ -2,6 +2,7 @@
 
 namespace smarthome {
 
+// Vraag 16: member initialization list
 Light::Light(const QString& n)
     : Device(n, 1), isOn(false) {}
 
@@ -14,21 +15,15 @@ QString Light::status() const {
     return isOn ? "Light is ON" : "Light is OFF";
 }
 
+// Vraag 20: useful member function
 void Light::turnOn() {
     isOn = true;
-    emit stateChanged((isOn);
+    emit stateChanged(isOn);
 }
-
-QObject::connect(livingRoom, &Light::stateChanged,
-                 [](bool on) {
-                     qDebug() << "Light changed to:" << on;
-                 });
-
-livingRoom->turnOn();
 
 void Light::turnOff() {
     isOn = false;
-    emit stateChanged((isOn);
+    emit stateChanged(isOn);
 }
 
 }

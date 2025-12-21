@@ -2,6 +2,8 @@
 
 namespace smarthome {
 
+// Vraag 16: member initialization list
+// Vraag 29: const reference usage (QString&)
 Device::Device(const QString& n, unsigned char i)
     : name(n), id(i) {}
 
