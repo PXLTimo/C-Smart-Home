@@ -2,9 +2,8 @@
 
 namespace smarthome {
 
-Light::Light() : Device("Light", 1), isOn(false) {}
-
-Light::Light(const QString& n) : Device(n, 1), isOn(false) {}
+Light::Light(const QString& n)
+    : Device(n, 1), isOn(false) {}
 
 Light::Light(const Light& other)
     : Device(other), isOn(other.isOn) {}
@@ -17,14 +16,19 @@ QString Light::status() const {
 
 void Light::turnOn() {
     isOn = true;
+    emit stateChanged((isOn);
 }
+
+QObject::connect(livingRoom, &Light::stateChanged,
+                 [](bool on) {
+                     qDebug() << "Light changed to:" << on;
+                 });
+
+livingRoom->turnOn();
 
 void Light::turnOff() {
     isOn = false;
-}
-
-void toggleLight(Light& l) {
-    l.isOn = !l.isOn;
+    emit stateChanged((isOn);
 }
 
 }

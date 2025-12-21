@@ -1,29 +1,31 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 
+#include <QObject>
 #include "device.h"
 
 namespace smarthome {
 
-class Light : public Device {
+class Light : public QObject, public Device {
+    Q_OBJECT
+
 private:
     bool isOn;
 
 public:
-    Light();
-    Light(const QString& n);
+    explicit Light(const QString& n = "Light");
     Light(const Light& other);
     ~Light();
 
     QString status() const override;
 
+public slots:
     void turnOn();
     void turnOff();
 
-    friend void toggleLight(Light& l);   // friend function
+signals:
+    void stateChanged(bool on);
 };
-
-void toggleLight(Light& l);
 
 } // namespace smarthome
 

@@ -12,7 +12,8 @@ add_executable(CPP_Januari main.cpp
     light.cpp
     manager.h
     manager.cpp
-    utils.h)
+    utils.h
+    test_light.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS CPP_Januari

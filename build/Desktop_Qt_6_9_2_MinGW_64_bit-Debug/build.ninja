@@ -73,6 +73,12 @@ build CMakeFiles/CPP_Januari.dir/manager.cpp.obj: CXX_COMPILER__CPP_Januari_unsc
   OBJECT_DIR = CMakeFiles\CPP_Januari.dir
   OBJECT_FILE_DIR = CMakeFiles\CPP_Januari.dir
 
+build CMakeFiles/CPP_Januari.dir/test_light.cpp.obj: CXX_COMPILER__CPP_Januari_unscanned_Debug C$:/Users/Gebruiker/Documents/QT/CPP_Januari/test_light.cpp || cmake_object_order_depends_target_CPP_Januari
+  DEP_FILE = CMakeFiles\CPP_Januari.dir\test_light.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CPP_Januari.dir
+  OBJECT_FILE_DIR = CMakeFiles\CPP_Januari.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CPP_Januari
@@ -81,7 +87,7 @@ build CMakeFiles/CPP_Januari.dir/manager.cpp.obj: CXX_COMPILER__CPP_Januari_unsc
 #############################################
 # Link the executable CPP_Januari.exe
 
-build CPP_Januari.exe: CXX_EXECUTABLE_LINKER__CPP_Januari_Debug CMakeFiles/CPP_Januari.dir/main.cpp.obj CMakeFiles/CPP_Januari.dir/device.cpp.obj CMakeFiles/CPP_Januari.dir/light.cpp.obj CMakeFiles/CPP_Januari.dir/manager.cpp.obj
+build CPP_Januari.exe: CXX_EXECUTABLE_LINKER__CPP_Januari_Debug CMakeFiles/CPP_Januari.dir/main.cpp.obj CMakeFiles/CPP_Januari.dir/device.cpp.obj CMakeFiles/CPP_Januari.dir/light.cpp.obj CMakeFiles/CPP_Januari.dir/manager.cpp.obj CMakeFiles/CPP_Januari.dir/test_light.cpp.obj
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CPP_Januari.dir
