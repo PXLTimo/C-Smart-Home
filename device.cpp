@@ -1,10 +1,17 @@
 #include "device.h"
 
+namespace smarthome {
 
-Device::Device() : name("Unnamed Device") {}
-Device::Device(const QString &n) : name(n) {}
-Device::Device(const Device &d) : name(d.name) {}
+Device::Device(const QString& n, unsigned char i)
+    : name(n), id(i) {}
+
+Device::Device(const Device& other)
+    : name(other.name), id(other.id) {}
+
 Device::~Device() {}
 
+unsigned char Device::getId() const {
+    return id;
+}
 
-QString Device::getName() const { return name; }
+}

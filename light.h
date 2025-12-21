@@ -1,26 +1,30 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 
-
 #include "device.h"
 
+namespace smarthome {
 
-class Light : public Device { // (5) inheritance
+class Light : public Device {
 private:
-    bool isOn; // (4) encapsulation via private
+    bool isOn;
+
 public:
     Light();
-    Light(const QString &n);
-    Light(const Light &l);
+    Light(const QString& n);
+    Light(const Light& other);
     ~Light();
 
-
-    QString status() const override; // (5) polymorphism
-
+    QString status() const override;
 
     void turnOn();
     void turnOff();
+
+    friend void toggleLight(Light& l);   // friend function
 };
 
+void toggleLight(Light& l);
+
+} // namespace smarthome
 
 #endif

@@ -1,25 +1,26 @@
 #ifndef DEVICE_H
 #define DEVICE_H
 
-
 #include <QString>
 
+namespace smarthome {
 
-class Device { // (1) class
+class Device {
 protected:
     QString name;
+    unsigned char id;
+
 public:
-    Device(); // (3) default constructor
-    Device(const QString &n); // (3) parameterized constructor
-    Device(const Device &d); // (3) copy constructor
-    virtual ~Device(); // required
+    explicit Device(const QString& n = "Unnamed Device", unsigned char i = 0);
+    Device(const Device& other);
+    virtual ~Device();
 
+    inline QString getName() const { return name; }
+    unsigned char getId() const;
 
-    virtual QString status() const = 0; // (7) abstract function -> abstract base class
-
-
-    QString getName() const;
+    virtual QString status() const = 0;
 };
 
+} // namespace smarthome
 
 #endif

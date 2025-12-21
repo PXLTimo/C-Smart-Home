@@ -9,7 +9,10 @@ add_executable(CPP_Januari main.cpp
     device.h
     light.h
     device.cpp
-    light.cpp)
+    light.cpp
+    manager.h
+    manager.cpp
+    utils.h)
 
 include(GNUInstallDirs)
 install(TARGETS CPP_Januari
